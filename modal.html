@@ -1,0 +1,74 @@
+<!DOCTYPE>
+<html lang="zh-tw">
+<meta charset="UTF-8">
+
+<head>
+    <title>modal</title>
+    <link rel="stylesheet" href="http://maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="./modal.css">
+</head>
+
+<body>
+    <div class='pageConatiner'>
+        <header>
+            <section class="pageHeader_inner clearfix">
+                <h1 class="pageHeader_title">Accessible Modal Practice</h1>
+                <button type="button" class="nav_btn open-dialog" aria-label="open Navigation">
+                <i class="fa fa-bars"></i>
+                </button>
+            </section>
+        </header>
+        <main>
+            <section class="pageContent">
+                <p>
+                    Venmo tacos ennui hoodie lomo tousled. Meh irony blue bottle brooklyn paleo. Post-ironic PBR&B blue bottle, iPhone meh ennui forage salvia normcore neutra chicharrones gentrify. Banjo jean shorts selfies, try-hard venmo before they sold out 8-bit gluten-free
+                    pinterest sustainable messenger bag you probably haven't heard of them poutine. Scenester farm-to-table craft beer, knausgaard leggings letterpress brunch asymmetrical. Brooklyn you probably haven't heard of them typewriter flannel.
+                    Etsy austin venmo, knausgaard green juice squid butcher kombucha literally beard jean shorts VHS tote bag.</p>
+                <p>Artisan bushwick pop-up, biodiesel viral semiotics cliche pinterest fingerstache godard lo-fi franzen forage. Hammock narwhal ethical, kogi put a bird on it pork belly bushwick photo booth +1 master cleanse pinterest direct trade vegan
+                    tofu. Small batch cold-pressed paleo wolf, skateboard asymmetrical cred vegan pickled pinterest freegan. Man bun portland man braid, thundercats swag keffiyeh scenester semiotics put a bird on it keytar four loko beard pour-over. Meh
+                    VHS biodiesel actually poutine, normcore neutra beard narwhal hoodie. Synth sustainable cred meditation health goth tousled. Post-ironic cornhole scenester whatever, authentic bushwick keffiyeh venmo kinfolk chia.
+                </p>
+                <p> Sriracha XOXO master cleanse lomo blue bottle, banh mi fashion axe man braid flexitarian. Meggings pug ennui, chambray 8-bit celiac gentrify. Bitters direct trade chia semiotics. Synth fixie mixtape, health goth four dollar toast vinyl
+                    3 wolf moon VHS schlitz. Drinking vinegar letterpress VHS poutine, venmo cronut distillery artisan. Everyday carry craft beer butcher DIY. Normcore affogato chillwave, thundercats banh mi fingerstache keytar pop-up four loko four dollar
+                    toast.
+                </p>
+            </section>
+        </main>
+        <div class="dialog" role="dialog" aria-hidden="true" aria-labelledby="dialog_title" aria-describedby="dialog_description">
+            <h1 id="dialog_title" class="dialog_title">我是燈箱的標題</h1>
+
+            <div class="dialog_content">
+                <p id="dialog_description">我是燈箱的描述</p>
+                <nav>
+                    <ul>
+                        <li><a class="dialog_link" href="javascript:voild(0)">Link One</a></li>
+                        <li><a class="dialog_link" href="javascript:voild(0)">Link Two</a></li>
+                        <li><a class="dialog_link" href="javascript:voild(0)">Link Three</a></li>
+                    </ul>
+                </nav>
+            </div>
+            <div class="dialog_buttonWrapper">
+                <button type="button" class="btn btn-cancel close-dialog" aria-label="Close Navigation">
+                繼續瀏覽
+            </button>
+                <!--<button type="button" class="btn btn-confirm close-dialog" aria-label="Submit button">
+                確認送出
+            </button>-->
+            </div>
+        </div>
+        <div class="dialog_overlay" aria-hidden="true" tab-index="-1"></div>
+    </div>
+</body>
+<script src="modal.js"></script>
+<script>
+    var dialogEl = document.getElementsByClassName('dialog')[0];
+    var dialogOverlay = document.getElementsByClassName('dialog_overlay')[0];
+    var cancelBtn = document.getElementsByClassName('btn-cancel')[0];
+    var navBtn = document.getElementsByClassName('nav_btn')[0];
+    var dialog = new Dialog(dialogEl, dialogOverlay);
+
+    dialog.setDialogFocusEl();
+    dialog.addEvent('.open-dialog', '.close-dialog');
+</script>
+
+</html>
