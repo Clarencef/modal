@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+   <link rel="stylesheet" href="./modal_jquery.css">
+  <script src="./node_modules/jquery/dist/jquery.min.js"></script>
+  <script src="./modal_jquery.js"></script>
+</head>
+
+<body>
+  <button data-behavior='confirmSubmit'>click to open modal</button>
+  <div class="modal fade" tabindex="-1" role="dialog" data-target="comfirm_modal">
+    <div class="modal-flex-container">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h4 class="modal-title">Are you sure you're ready to submit your answers?</h4>
+          </div>
+          <div class="modal-body">
+            <p>This is your final chance to check over your answers again. If you're sure you're ready, click the submit button</p>
+          </div>
+          <div class="modal-footer">
+            <input name="cancel" type="submit" value="NO, LET ME CHECK AGAIN" class="btn-ghost-skyblue modal-btn" data-closeTrigger="modal">
+            <input name="summit" type="submit" value="YES, SUBMIT NOW!" class="btn-skyblue modal-btn">
+          </div>
+        </div>
+        <!-- /.modal-content -->
+      </div>
+      <!-- /.modal-dialog -->
+    </div>
+    <!-- /.modal-flex-container -->
+  </div>
+</body>
+<script>
+  $("button[data-behavior='confirmSubmit']").on('click',function () {
+    $(".modal[data-target='comfirm_modal']").modal("show");
+  });
+</script>
+
+</html>
